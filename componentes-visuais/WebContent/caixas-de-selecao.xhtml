@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Visao Geral</title>
+</h:head>
+<h:body>
+
+	<h:form>
+		<h:selectOneMenu value="#{cursosBean.siglaDoCursoEscolhido}">
+			<f:selectItem itemValue="K11"
+				itemLabel="Orientação a Objetos em Java" />
+			<f:selectItem itemValue="K12"
+				itemLabel="Desenvolvimento Web com JSF2 e JPA2" />
+		</h:selectOneMenu>
+		<br />
+		<br />
+		<h:selectOneMenu value="#{cursosBean.siglaDoCursoEscolhido}">
+			<f:selectItems value="#{cursosBean.cursos}" var="curso"
+				itemValue="#{curso.sigla}" itemLabel="#{curso.nome}" />
+		</h:selectOneMenu>
+		<br />
+		<br />
+
+		<h:selectOneListbox value="#{cursosBean.siglaDoCursoEscolhido}">
+			<f:selectItems value="#{cursosBean.cursos}" var="curso"
+				itemValue="#{curso.sigla}" itemLabel="#{curso.nome}" />
+		</h:selectOneListbox>
+		<br />
+		<br />
+		<h:commandButton action="#{cursosBean.submete}" value="Enviar" />
+	</h:form>
+</h:body>
+</html>
